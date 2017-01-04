@@ -117,7 +117,12 @@ crawl.prototype.newestOf = function(link, callback) {
             .children[0] // b
             .children[0]; // text
 
-        return callback(null, element.data.split('-')[1]);
+        var num = element.data.split('-')[1];
+
+        var id = link.substring(res.LINK.lastIndexOf('/') + 1, res.LINK.length);
+        var viewLink = 'http://v.comicbus.com/online/comic-' + id + '?ch=' + num;
+
+        return callback(null, num, viewLink);
     });
 }
 
