@@ -1,0 +1,18 @@
+{
+  "name": "yee",
+  "version": "0.1.0",
+  "description": "messenger chat bot yo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jimmy Prime",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "facebook-chat-api": "^1.2.0",
+    "iconv-lite": "^0.4.15",
+    "promise": "^7.1.1",
+    "sqlite3": "^3.1.8"
+  }
+}
