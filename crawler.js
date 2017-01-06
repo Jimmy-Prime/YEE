@@ -27,7 +27,6 @@ crawl.prototype.all = function(callback) {
         }
 
         var str = iconv.decode(new Buffer(body), 'big5');
-        // page.write(str);
 
         var $ = cheerio.load(str, {
             decodeEntities: false
@@ -59,7 +58,17 @@ crawl.prototype.all = function(callback) {
                     if (tds[k].children[0]) {
                         var a = tds[k].children[0];
 
-                        list.push(a.children[0].data);
+                        var title = a.children[0].data;
+                        var index = title.indexOf('&#');
+                        if (index != -1) {
+                            list.push(title.substring(0, index) +
+                                      String.fromCharCode(parseInt(title.substring(index+2, index+7))) +
+                                      title.substring(index+8, title.length));
+                        }
+                        else {
+                            list.push(title);
+                        }
+
                         list.push(a.attribs.href);
                     }
                 }

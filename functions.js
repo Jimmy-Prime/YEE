@@ -2,6 +2,10 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('comics.db');
 const crawl = require('./crawler.js');
 
+const errLog = fs.createWriteStream('./error', {
+    flags: 'a'
+});
+
 var functions = function() {};
 
 functions.prototype.find = function(tokens, senderID, callback) {
