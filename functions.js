@@ -1,3 +1,4 @@
+const fs = require('fs');
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('comics.db');
 const crawl = require('./crawler.js');
@@ -219,7 +220,7 @@ function formatArray(arr, text) {
             message += ', ' + entry;
         });
 
-        message = message.substring(0. message.length - 2);
+        message = message.substring(0, message.length - 2);
     }
 
     message += ']\n';

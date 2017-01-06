@@ -60,15 +60,14 @@ crawl.prototype.all = function(callback) {
 
                         var title = a.children[0].data;
                         var index = title.indexOf('&#');
-                        if (index != -1) {
-                            list.push(title.substring(0, index) +
-                                      String.fromCharCode(parseInt(title.substring(index+2, index+7))) +
-                                      title.substring(index+8, title.length));
-                        }
-                        else {
-                            list.push(title);
+                        while (index != -1) {
+                            title = title.substring(0, index) +
+                                    String.fromCharCode(parseInt(title.substring(index+2, index+7))) +
+                                    title.substring(index+8, title.length)
+                            index = title.indexOf('&#');
                         }
 
+                        list.push(title);
                         list.push(a.attribs.href);
                     }
                 }
