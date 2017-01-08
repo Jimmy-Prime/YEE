@@ -127,7 +127,7 @@ crawl.prototype.newestOf = function(link, callback) {
 
         var num = element.data.split('-')[1];
 
-        var id = link.substring(res.LINK.lastIndexOf('/') + 1, res.LINK.length);
+        var id = link.substring(link.lastIndexOf('/') + 1, link.length);
         var viewLink = 'http://v.comicbus.com/online/comic-' + id + '?ch=' + num;
 
         return callback(null, num, viewLink);
