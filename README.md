@@ -4,7 +4,7 @@
 credit: [facebook-chat-api](https://github.com/Schmavery/facebook-chat-api)
 
 #安裝
-可以直接跟[我的分身](https://www.facebook.com/profile.php?id=100014700733601&fref=ts)傳訊息
+可以直接跟[我的bot粉絲頁](https://www.facebook.com/YEE0PRIME)傳訊息
 
 還是你想要裝自己的
 

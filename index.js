@@ -54,6 +54,8 @@ db.serialize(function() {
 
 function login() {
     fbbot({
+        email: 'FB_ACCOUNT',
+        password: 'FB_PASSWORD'
     }, function callback(err, api) {
         if (err) {
             errLog.write('login error\n' + err);
@@ -62,9 +64,14 @@ function login() {
 
         setInterval(function() {
             functions.updateSubs(function(err, message, id) {
+                console.log('send update ' + message + ' to ' + id);
                 api.sendMessage(message, id);
             });
         }, 24 * 60 * 60 * 1000);
+
+        api.setOptions({
+            pageID: 'FB_FAN_PAGE_ID'
+        });
 
         api.listen(function(err, message) {
             mainLoop(err, message, api);

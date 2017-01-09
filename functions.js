@@ -217,7 +217,7 @@ function formatArray(arr, text) {
         message += 'X';
     } else {
         arr.forEach(function(entry) {
-            message += ', ' + entry;
+            message += entry + ', ';
         });
 
         message = message.substring(0, message.length - 2);
